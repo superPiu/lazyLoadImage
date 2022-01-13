@@ -1,5 +1,5 @@
 {
-  "name": "lazyloadimage",
+  "name": "lazy-load-image",
   "version": "1.0.0",
   "description": "preload lazy ",
   "main": "index.js",
@@ -24,7 +24,9 @@
   "dependencies": {
     "debounce-and-throttle": "^1.0.0",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.5.0"
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "super-lazy-load-image": "^1.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",

@@ -18,17 +18,21 @@ module.exports = {
     module:{
         rules:[
             {
-                test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
-                use: [
-                  {
-                    loader: 'url-loader',
-                    options: {
-                      limit: 1024 * 100,
-                      esModule: false
-                    }
-                  }
-                ]
-              }
+              test: /\.(png|jpe?g|gif|webp)$/,
+              loader: 'url-loader',
+              options: {
+                limit: 1024 * 1,
+                publicPath:'/imgs/',
+                outputPath:'/imgs',
+                name:'[name][hash:10].[ext]',
+                esModule: false
+              },
+              type: 'javascript/auto'
+            },
+            {
+              test:/\.html$/,
+              loader:'html-loader'
+            }
               
         ]
     },
@@ -38,7 +42,7 @@ module.exports = {
             title:"debounce-throttle",     //在html文件中设置<title><%= htmlWebpackPlugin.options.title %></title>，可以将标题名字传入给html
             template:"./src/index.html"  //可以指定该html模板为打包好的html文件，并可以将其他的js文件自动引入进去，路径从根目录开始
         }),
-        new webpack.BannerPlugin('版权归牛XX公司所有')
+        new webpack.BannerPlugin('版权归piu公司所有')
 
     ],
     target: 'web',
