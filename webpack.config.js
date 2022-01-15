@@ -5,7 +5,7 @@ module.exports = {
     mode:"development",
     // entry:'./src/one.js',   //入口文件的路径，引入单文件
     // entry:["./src/one.js","./src/two.js"],      //多入口，单出口
-    entry:"./src/index.js",
+    entry:"./demo/index.js",
     output:{    //规定了webpack的出口文件
         // path:path.join(__dirname,'dist'),   //与该文件同级的当前目录，找到当前文件夹
         // path:path.join(__dirname,'../dist'),    //若将改文件放在了别的目录内，就会使打包后的把文件也与此同级，所以给打包的文件指定一个路径
@@ -40,7 +40,7 @@ module.exports = {
     plugins:[   //直接在打包好的文件中生成一个index.html文件，并自动将其他的文件引入到该html中
         new HtmlWebpackPlugin({
             title:"debounce-throttle",     //在html文件中设置<title><%= htmlWebpackPlugin.options.title %></title>，可以将标题名字传入给html
-            template:"./src/index.html"  //可以指定该html模板为打包好的html文件，并可以将其他的js文件自动引入进去，路径从根目录开始
+            template:"./demo/index.html"  //可以指定该html模板为打包好的html文件，并可以将其他的js文件自动引入进去，路径从根目录开始
         }),
         new webpack.BannerPlugin('版权归piu公司所有')
 
